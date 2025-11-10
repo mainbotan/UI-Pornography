@@ -1,0 +1,79 @@
+@use 'base/reset';
+@use 'base/typography' as *;
+@use 'base/themes/dark' as dark;
+@use 'base/themes/light' as light;
+
+:root {
+  --transition: 0.3s ease;
+  --pc-min-width: 1420px;
+  --mobile-max-width: 720px;
+  
+  // Подключаем шрифты
+  @include font-styles;
+  
+  // Светлая тема по умолчанию
+  @include light.theme;
+
+  // детально
+  --component-border-radius: 16px;
+  --component-border-width: 1;
+  --sm-text-size: 15px;
+  --mid-text-size: 18px;
+  --extra-text-size: 22px;
+
+  --color-brand: #d6379c;
+}
+[data-theme="dark"] {
+  @include dark.theme;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+html, body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  background: var(--color-leader);
+  color: var(--color-text-primary);
+  transition: background-color var(--transition), color var(--transition);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-size: 1.6rem;
+
+  @media (max-width: 720px) {
+    font-size: 1.2em;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.focus {
+  display: inline-block;
+  max-width: 120rem;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 0.9;
+}
+
+h2, h3 {
+  line-height: 1;
+}
+
+p {
+  max-width: 65ch;
+  margin-bottom: 1em;
+}

@@ -1,0 +1,71 @@
+@use '@/assets/styles/_mixins.scss' as *;
+
+.frame {
+    display: flex;
+    width: 0.965em;
+    height: 0.965em;
+    position: relative;
+
+    $block-size: 0.3em;
+    $block-inter: 0.03em;
+    $block-radius: 0.09em;
+
+    .block {
+        width: $block-size;
+        height: $block-size;
+        background-color: #121212;
+        // border-radius: 0.04em;
+        display: inline-flex;
+        position: absolute;
+        z-index: 10;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+
+        .blur {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 12;
+            backdrop-filter: blur(3px);
+            background-color: #14121212;
+        }
+
+        &:nth-child(1) {
+            display: inline-flex;
+            top: 0em;
+            left: 0em;
+        }
+        &:nth-child(2) {
+            display: inline-flex;
+            top: calc($block-size + $block-inter);
+            left: 0em;
+        }
+        &:nth-child(3) {
+            display: inline-flex;
+            top: calc(($block-size + $block-inter)*2);
+            left: 0em;
+            border-bottom-left-radius: $block-radius;
+        }
+        &:nth-child(4) {
+            display: inline-flex;
+            top: calc(($block-size + $block-inter)*2);
+            left: calc($block-size + $block-inter);
+        }
+        &:nth-child(5) {
+            display: inline-flex;
+            top: calc(($block-size + $block-inter)*2);
+            left: calc(($block-size + $block-inter)*2);
+        }
+        &:nth-child(6) {
+            display: inline-flex;
+            top: calc($block-size + $block-inter);
+            left: calc(($block-size + $block-inter)*2);
+        }
+        &:nth-child(7) {
+            display: inline-flex;
+            top: 0em;
+            left: calc(($block-size + $block-inter)*2);
+        }
+    }
+}

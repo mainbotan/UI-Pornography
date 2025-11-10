@@ -1,0 +1,101 @@
+.label {
+  font-size: 1em;
+  padding: 5px;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--border-width) solid var(--color-border-primary);
+  border-radius: var(--component-border-radius);
+  color: var(--theme-text-color);
+  padding: 9px 21px;
+  font-size: 1em;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  @media (max-width: 720px) { cursor: auto; }
+  background: var(--color-background-secondary);
+  white-space: nowrap;
+
+  &.loading {
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
+  .loadingContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    
+    // Для маленького размера уменьшаем отступ
+    .sm & {
+      gap: 6px;
+    }
+  }
+
+  &.sm {
+    padding: 5px 10px;
+    font-size: 0.8em;
+  }
+  &.bg {
+    padding: 13px 22px;
+    font-size: 1.06em;
+    border-radius: calc(var(--component-border-radius) + 2px);
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &.contrast {
+    background: var(--color-background-contrast);
+    color: var(--color-text-contrast);
+    border-color: var(--color-background-contrast);
+  }
+  &.brand {
+    background: var(--color-brand);
+    color: var(--color-text-contrast);
+    border-color: var(--color-brand);
+  }
+  &.alternative {
+    background: var(--color-alternative-primary);
+    color: var(--color-text-contrast);
+    border-color: var(--color-background-contrast);
+  }
+  &.accent {
+    background: var(--color-accent-primary);
+    color: var(--color-accent-primary-contrast);
+    border: none;
+    outline: none;
+  }
+  &.empty {
+    background: transparent;
+  }
+
+  &.rounded {
+    border-radius: 22px;
+
+    &.bg {
+        border-radius: 27px;
+    }
+  }
+
+  &.scale:hover {
+    transform: scale(1.02);
+  }
+
+  &.invert:hover {
+    background: var(--color-background-contrast);
+    color: var(--color-text-contrast);
+    border-color: var(--color-background-contrast);
+  }
+  &.invert.contrast:hover {
+    background: transparent;
+    color: var(--theme-text-color);
+    border: var(--border-width) solid var(--color-border-primary-color);
+  }
+  &.fullWidth {
+    display: flex;
+    width: 100%;
+  }
+}
