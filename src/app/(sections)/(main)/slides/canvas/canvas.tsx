@@ -9,9 +9,9 @@ export default function Canvas() {
                 <div className={styles.block}>
                     <U /><I /><div className={styles.line}>Pornography</div>
                 </div>
-                {/* <div className={styles.logo}>
+                <div className={styles.logo}>
                     Matrix <span className={styles.contrast}>One</span>
-                </div> */}
+                </div>
             </div>
         </div>
     )
