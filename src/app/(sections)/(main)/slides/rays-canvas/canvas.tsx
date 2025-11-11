@@ -7,6 +7,7 @@ export default function RaysCanvas() {
             <div className={styles.focus}>
 
             </div>
+            <Rays />
         </div>
     )
 }

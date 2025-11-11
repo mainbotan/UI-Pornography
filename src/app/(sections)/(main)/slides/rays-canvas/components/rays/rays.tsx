@@ -1,10 +1,36 @@
 import styles from './../../canvas.module.scss';
+
 export default function Rays() {
     return (
-        <>
-        <svg className={styles.rays} viewBox="0 0 648 332" xmlns="http://www.w3.org/2000/svg">
-            <path stroke='#000000' d="M332.5 331.5H0.5V249.5M332.5 331.5H647.5V217.5M332.5 331.5L647.5 217.5M332.5 331.5L647.5 99.5M332.5 331.5L647.5 0.5M332.5 331.5L538.5 0.5M332.5 331.5L443.5 0.5M332.5 331.5V0.5M332.5 331.5L265.5 0.5M332.5 331.5L149.5 0.5M332.5 331.5L40.5 0.5M332.5 331.5L0.5 75.5M332.5 331.5L0.5 165.5M332.5 331.5L0.5 249.5M647.5 217.5V99.5M647.5 99.5V0.5M647.5 0.5H538.5M538.5 0.5H443.5M443.5 0.5H332.5M332.5 0.5H265.5M265.5 0.5H149.5M149.5 0.5H40.5M40.5 0.5H0.5V75.5M0.5 75.5V165.5M0.5 165.5V249.5" />
+        <svg 
+            className={styles.rays} 
+            viewBox="0 0 648 332" 
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            {/* Центральный луч */}
+            <path className={styles.ray1} d="M324 332V0" />
+            
+            {/* Симметричные пары лучей с одинаковыми углами */}
+            <path className={styles.ray2} d="M324 332L284 0" />
+            
+            <path className={styles.ray4} d="M324 332L216 0" />
+            <path className={styles.ray5} d="M324 332L432 0" />
+            
+            <path className={styles.ray6} d="M324 332L108 0" />
+            <path className={styles.ray7} d="M324 332L540 0" />
+            
+            <path className={styles.ray8} d="M324 332L0 83" />
+            <path className={styles.ray9} d="M324 332L648 83" />
+            
+            <path className={styles.ray10} d="M324 332L0 166" />
+            <path className={styles.ray11} d="M324 332L648 166" />
+            
+            <path className={styles.ray12} d="M324 332L0 249" />
+            <path className={styles.ray13} d="M324 332L648 249" />
+            
+            <path className={styles.ray14} d="M324 332L0 332" />
+            <path className={styles.ray15} d="M324 332L648 332" />
         </svg>
-        </>
     )
 }

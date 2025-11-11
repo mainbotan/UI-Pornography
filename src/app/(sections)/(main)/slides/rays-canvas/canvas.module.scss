@@ -26,7 +26,35 @@
     z-index: 1;
     bottom: 0px;
     left: 0px;
+    
     width: 100%;
     height: 100%;
-    fill: none;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+    path {
+        stroke-width: 1;
+        fill: none;
+        stroke: #000000; // дефолтный цвет
+    }
+    
+    // Каждому лучу свой цвет!
+    .ray1 { stroke: #f08b8b; }
+    .ray2 { stroke: #00ff00; }
+    .ray3 { stroke: #0000ff; }
+    .ray4 { stroke: #ffff00; }
+    .ray5 { stroke: #ff00ff; }
+    .ray6 { stroke: #00ffff; }
+    .ray7 { stroke: #ff8800; }
+    .ray8 { stroke: #88ff00; }
+    .ray9 { stroke: #0088ff; }
+    .ray10 { stroke: #8800ff; }
+    .ray11 { stroke: #ff0088; }
+    .ray12 { stroke: #888888; }
+    .ray13 { stroke: #333333; }
+    
+    // Или градиенты, прозрачность и т.д.
+    .ray2 { stroke: url(#gradient); }
 }

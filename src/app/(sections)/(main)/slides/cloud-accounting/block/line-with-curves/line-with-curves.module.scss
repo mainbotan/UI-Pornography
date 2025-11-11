@@ -1,0 +1,79 @@
+// LineWithCurves.module.scss
+.container {
+    width: 44px;
+    height: 378px;
+    display: inline-block;
+}
+
+.animatedPath {
+    stroke: rgb(195, 129, 129);
+    stroke-width: 2;
+    fill: none;
+    stroke-dasharray: 500;
+    stroke-dashoffset: 500;
+    animation-fill-mode: forwards;
+}
+
+.mainLine {
+    animation: drawMain 2s ease-in-out forwards;
+}
+
+.whisker1 {
+    animation: drawWhisker1 1.5s ease-in-out 1s forwards;
+    // Начинается когда основная линия дойдет до y=0 (начало первого усика)
+}
+
+.whisker2 {
+    animation: drawWhisker2 1.5s ease-in-out 2.2s forwards;
+    // Начинается когда основная линия дойдет до y=168 (начало второго усика)
+}
+
+@keyframes drawMain {
+    0% {
+        stroke-dashoffset: 500;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawWhisker1 {
+    0% {
+        stroke-dashoffset: 500;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawWhisker2 {
+    0% {
+        stroke-dashoffset: 500;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+// Альтернативный вариант с вычислением точных длин путей
+.calculatedAnimation {
+    &.mainLine {
+        stroke-dasharray: 377; // Длина основной линии (377px)
+        stroke-dashoffset: 377;
+        animation: drawMain 2s ease-in-out forwards;
+    }
+    
+    &.whisker1 {
+        stroke-dasharray: 180; // Примерная длина первого усика
+        stroke-dashoffset: 180;
+        animation: drawWhisker1 1s ease-in-out 0.5s forwards;
+        // Начинается когда основная линия пройдет 377px до точки (0,0)
+    }
+    
+    &.whisker2 {
+        stroke-dasharray: 160; // Примерная длина второго усика  
+        stroke-dashoffset: 160;
+        animation: drawWhisker2 1s ease-in-out 1.8s forwards;
+        // Начинается когда основная линия пройдет 209px до точки (0,168)
+    }
+}
