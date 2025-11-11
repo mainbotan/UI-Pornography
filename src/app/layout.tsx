@@ -5,6 +5,8 @@ import Providers from "./providers";
 import ScrollToTop from "./ScrollToTop";
 import Header from "./(sections)/components/header/header";
 import Footer from "./(sections)/components/footer/footer";
+import SystemStatusBar from "./(sections)/components/system-status-bar/system-status";
+import FeedbackBar from "./(sections)/components/feedback-bar/feedback";
 
 export const metadata: Metadata = {
   title: "UI Pornography",
@@ -42,6 +44,8 @@ export default function RootLayout({
             <main className={styles.content}>
               {children}
             </main>
+            <FeedbackBar />
+            <SystemStatusBar />
             <Footer />
         </Providers>
       </body>

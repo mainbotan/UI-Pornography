@@ -70,6 +70,63 @@
             }
         }
     }
+    &.account {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        gap: 0.5em;
+        @include cursor(pointer);
+
+        .avatar {
+            display: inline-flex;
+            align-items: center;
+
+            .img {
+                width: 1.7em;
+                height: 1.7em;
+                background: #222222;
+                border-radius: 0.2em;
+            }
+        }
+        .info {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            gap: 0.2em;
+            max-width: 6rem;
+
+            .name, .status {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .name {
+                font-size: 0.7em;
+            }
+            .status {
+                display: flex;
+                flex-flow: row nowrap;
+                gap: 0.5em;
+                align-items: center;
+                font-size: 0.6em;
+                color: var(--color-text-description);
+
+                .icon {
+                    width: 0.8em;
+                    height: 0.8em;
+                }
+                // &.active {
+                //     color: var(--color-green);
+
+                //     .icon {
+                //         fill: var(--color-green);
+                //     }
+                // }
+            }
+            @media (max-width: 720px) {
+                display: none;
+            }
+        }
+    }
     &.actions {
         display: inline-flex;
         align-items: center;

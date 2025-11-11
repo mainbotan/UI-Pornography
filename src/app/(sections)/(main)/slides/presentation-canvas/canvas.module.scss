@@ -3,7 +3,7 @@
 .container {
     display: flex;
     background-color: #000000;
-    height: 34rem;
+    height: 32rem;
     justify-content: center;
 
     .focus {
@@ -22,6 +22,9 @@
         @media (max-width: 720px) {
             font-size: 1.1em;
         }
+    }
+    @media (max-width: 720px) {
+        height: 35rem;
     }
 }
 

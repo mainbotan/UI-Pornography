@@ -4,6 +4,7 @@ import MatrixFullLogo from '@/assets/matrix/matrix-full-logo/matrix-full-logo';
 import Arrow from '@/assets/ui-kit/icons/arrow';
 import Menu from '@/assets/ui-kit/icons/menu';
 import Button from '@/assets/ui-kit/button/button';
+import CheckMark from '@/assets/ui-kit/icons/check-mark';
 
 export default function Header() {
     return (
@@ -17,6 +18,13 @@ export default function Header() {
                         <section className={styles.section}>Модули</section>
                         <section className={styles.section}>Разработчикам</section>
                         <section className={styles.section}>Тарифы</section>
+                    </section>
+                    <section className={clsx(styles.box, styles.account)}>
+                        <div className={styles.avatar}><span className={styles.img} /></div>
+                        <div className={styles.info}>
+                            <span className={styles.name}>Matrix 2301-234</span>
+                            <span className={clsx(styles.status, styles.active)}><span>Вход выполнен</span></span>
+                        </div>
                     </section>
                     <section className={clsx(styles.box, styles.actions)}>
                         <Button className={styles.action} variant='brand'>Войти</Button>

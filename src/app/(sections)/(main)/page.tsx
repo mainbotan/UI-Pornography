@@ -10,6 +10,7 @@ export default function Page() {
             <PresentationCanvas />
             <Modules />
             <RaysCanvas />
+            <Modules />
         </>
     );
 }
