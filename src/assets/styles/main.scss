@@ -1,30 +1,14 @@
 @use 'base/reset';
 @use 'base/typography' as *;
-@use 'base/themes/dark' as dark;
-@use 'base/themes/light' as light;
+@use 'base/themes/main' as main;
 
 :root {
+  @include font-styles;
+  @include main.theme;
+
   --transition: 0.3s ease;
   --pc-min-width: 1420px;
   --mobile-max-width: 720px;
-  
-  // Подключаем шрифты
-  @include font-styles;
-  
-  // Светлая тема по умолчанию
-  @include light.theme;
-
-  // детально
-  --component-border-radius: 16px;
-  --component-border-width: 1;
-  --sm-text-size: 15px;
-  --mid-text-size: 18px;
-  --extra-text-size: 22px;
-
-  --color-brand: #d6379c;
-}
-[data-theme="dark"] {
-  @include dark.theme;
 }
 
 html {
@@ -40,6 +24,7 @@ html, body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+  width: 100%;
   line-height: 1;
   font-size: 1.6rem;
 
@@ -47,7 +32,17 @@ html, body {
     font-size: 1.2em;
   }
 }
-
+@media (max-width: 720px) {
+  html, body {
+    -ms-overflow-style: none;  /* IE и Edge */
+    scrollbar-width: none;     /* Firefox */
+  }
+  
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;             /* Chrome, Safari, Opera */
+  }
+}
 .container {
   display: flex;
   justify-content: center;

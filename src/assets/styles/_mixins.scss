@@ -58,3 +58,10 @@
     transform: scale(0.8);
     animation: animate-block 0.2s forwards;
 }
+@mixin cursor($type: pointer) {
+    cursor: $type;
+
+    @media (max-width: 720px) {
+        cursor: auto;
+    }
+}

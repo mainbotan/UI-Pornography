@@ -1,5 +1,6 @@
 @mixin theme {
   // ==================== CORE ====================
+  --color-brand: #d6379c;
   --color-leader: #ffffff;                      // --color-leader
   
   // ==================== BACKGROUNDS ====================
@@ -27,7 +28,7 @@
   --color-border-primary: #eaeaea;              // --color-border-primary
   --color-border-secondary: #d2d2d2;            // --color-border-primary-color
   --color-line-stroke-primary: #b1b1b1;         // --color-line-stroke-primary
-  --color-line-stroke-secondary: #b1b1b19e;     // --color-line-stroke-secondary
+  --color-line-stroke-secondary: #3535359e;     // --color-line-stroke-secondary
   
   // ==================== ICONS ====================
   --color-icon-primary: #161616;                // --color-icon-primary

@@ -3,6 +3,8 @@ import '@/assets/styles/main.scss';
 import styles from './layout.module.scss';
 import Providers from "./providers";
 import ScrollToTop from "./ScrollToTop";
+import Header from "./(sections)/components/header/header";
+import Footer from "./(sections)/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "UI Pornography",
@@ -36,9 +38,11 @@ export default function RootLayout({
       </head>
       <body>
         <Providers>
+            <Header />
             <main className={styles.content}>
               {children}
             </main>
+            <Footer />
         </Providers>
       </body>
     </html>

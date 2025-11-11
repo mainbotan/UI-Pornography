@@ -7,12 +7,12 @@ import Spinner from '../spinner/spinner'; // Импортируем спинне
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant?: 'classic' | 'contrast' | 'accent' | 'empty' | 'alternative' | 'brand';
+  variant?: 'classic' | 'default' | 'contrast' | 'brand';
   border?: 'classic' | 'rounded';
   animation?: 'none' | 'scale';
   invert?: boolean;
   fullWidth?: boolean;
-  size?: 'sm' | 'md' | 'bg';
+  size?: 'sm' | 'md' | 'lg';
   loading?: boolean; // Добавляем пропс loading
 }
 
@@ -38,18 +38,16 @@ export default function Button({
         className={clsx(
           styles.button,
           {
-            [styles.accent]: variant === 'accent',
             [styles.contrast]: variant === 'contrast',
-            [styles.empty]: variant === 'empty',
-            [styles.alternative]: variant === 'alternative',
+            [styles.default]: variant === 'default',
             [styles.brand]: variant === 'brand',
             [styles.rounded]: border === 'rounded',
             [styles.scale]: animation === 'scale',
             [styles.invert]: invert,
             [styles.fullWidth]: fullWidth,
             [styles.sm]: size === 'sm',
-            [styles.bg]: size === 'bg',
-            [styles.loading]: loading, // Добавляем класс для состояния загрузки
+            [styles.bg]: size === 'lg',
+            [styles.loading]: loading,
           },
           className
         )}

@@ -2,28 +2,16 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  
-  // Можно задавать разные фоны для всего блока
-  &--dark {
-    background-color: #070707;
-  }
-  
-  &--light {
-    background-color: #fff;
-  }
 }
 
 .focus {
   display: flex;
   flex: 1;
-  max-width: 60rem; // 960px - ваша основная сетка
+  max-width: 60rem;
+  width: 100%;
+  padding: 0 1rem;
   
   &.fullWidth {
     max-width: none;
-  }
-  
-  // Адаптивность
-  @media (max-width: 768px) {
-    padding: 0 1rem;
   }
 }
