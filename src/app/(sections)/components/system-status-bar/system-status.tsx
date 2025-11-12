@@ -4,6 +4,7 @@ import MatrixFullLogo from '@/assets/matrix/matrix-full-logo/matrix-full-logo';
 import Arrow from '@/assets/ui-kit/icons/arrow';
 import Menu from '@/assets/ui-kit/icons/menu';
 import Button from '@/assets/ui-kit/button/button';
+import Link from 'next/link';
 
 export default function SystemStatusBar() {
     return (
@@ -11,7 +12,7 @@ export default function SystemStatusBar() {
             <div className={styles.container}>
                 <div className={styles.focus}>
                     <div className={clsx(styles.box, styles.widgetArea)}>
-                        <div className={clsx(styles.widget, styles.normal)}>Проблем не обнаружено</div>
+                        <Link href='/system-status' className={clsx(styles.widget, styles.problem)}>Частичное нарушение</Link>
                     </div>
                     <div className={clsx(styles.box, styles.hint)}>
                         Статус позволяет понять, какие модули мы обслуживаем в данный момент. <br />
